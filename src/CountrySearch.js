@@ -19,7 +19,8 @@ const CountrySearch = ({ setCountry }) => {
           <input
             type="text"
             className="form-control"
-            placeholder="Country / State"
+            placeholder="Country / State / City"
+            value={inputValue}
             onChange={handleInputChange}
           />
         </div>

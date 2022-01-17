@@ -16,7 +16,7 @@ const WeatherInfo = ({ weatherData }) => {
         </div>
       ) : (
         <div>
-          <h1>No Country / State Found</h1>
+          <h1>No Country / State / City Found</h1>
         </div>
       )}
     </div>
