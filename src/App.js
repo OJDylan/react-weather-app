@@ -30,7 +30,7 @@ const App = () => {
   return (
     <div className="container">
 
-      {/* check whether weatherData exists before rendering the component */}
+      {/* check if weatherData exists before rendering the component */}
       {weatherData.weather ? (
         <WeatherInfo weatherData={weatherData} />
       ) : (
