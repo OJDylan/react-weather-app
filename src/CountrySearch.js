@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
-const CountrySearch = ({ setCountry }) => {
-  const [inputValue, setInputValue] = useState("");
+const CountrySearch = ( { setCountry } ) => {
+  const [inputValue, setInputValue] = useState(""); // set intial state of inputValue
 
   const handleInputChange = (e) => {
     setInputValue(e.target.value);
@@ -15,6 +15,7 @@ const CountrySearch = ({ setCountry }) => {
   return (
     <div className="input-group mb-3 country-search">
       <form className="row g-3" onSubmit={handleSubmit}>
+
         <div className="col-auto">
           <input
             type="text"
@@ -24,11 +25,13 @@ const CountrySearch = ({ setCountry }) => {
             onChange={handleInputChange}
           />
         </div>
+
         <div className="col-auto">
           <button type="submit" className="btn btn-primary mb-3">
             Search
           </button>
         </div>
+
       </form>
     </div>
   );

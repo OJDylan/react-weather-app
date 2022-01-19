@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 
+// Import the components
 import WeatherInfo from "./WeatherInfo";
 import CountrySearch from "./CountrySearch";
 
@@ -9,8 +10,8 @@ const apiKey = {
 };
 
 const App = () => {
-  const [country, setCountry] = useState("Malaysia");
-  const [weatherData, setWeatherData] = useState({});
+  const [country, setCountry] = useState("Kuala Lumpur"); // set initial country state
+  const [weatherData, setWeatherData] = useState({}); // set initial weatherData state
 
   useEffect(() => {
     const fetchWeather = async () => {
@@ -18,20 +19,26 @@ const App = () => {
         `https://api.openweathermap.org/data/2.5/weather?q=${country}&appid=${apiKey.key}`
       );
       let data = await response.json();
-      setWeatherData(data);
+
+      setWeatherData(data); // update weatherData state with fetched response
       console.log(data);
     };
+
     fetchWeather();
-  }, [country]);
+  }, [country]); // dependency on country; entire block would exec whenever country variable changes
 
   return (
     <div className="container">
+
+      {/* check whether weatherData exists before rendering the component */}
       {weatherData.weather ? (
         <WeatherInfo weatherData={weatherData} />
       ) : (
         <h1>No Country / State / City Found</h1>
       )}
+
       <CountrySearch setCountry={setCountry} />
+
     </div>
   );
 };
