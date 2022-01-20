@@ -5,8 +5,9 @@ import "./App.css";
 import WeatherInfo from "./WeatherInfo";
 import CountrySearch from "./CountrySearch";
 
+// Guide to getting the API is from this site https://openweathermap.org/api
 const apiKey = {
-  key: "2255f5b5834362289b68c776ffeefaae",
+  key: "< insert apikey here >",
 };
 
 const App = () => {
